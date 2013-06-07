@@ -1,0 +1,37 @@
+import static java.lang.System.out;
+import java.util.Arrays;
+
+public class Nishesh {
+public static void main(String a[])
+{
+	CBC c=new CBC();
+	String Message="Nishesh Patel";//19/02/1990" ;
+	out.println("Original Message= "+Message);
+	
+	byte[] b1="Nishesh33344444444444444444444444444".getBytes();
+	byte[] b2="Patel555555444444444444444444444444".getBytes();
+	b1=Arrays.copyOf(b1,8);
+	b2=Arrays.copyOf(b2,8);
+	
+	
+	byte[] text=Arrays.copyOf("122222444434322222222".getBytes(),8);
+	out.println(text);
+	out.println(text.length);
+
+	
+	//String output=c.mydecrypt(b1, b2,c.myencrypt(b1,b2,Message));
+	String enc=c.myencrypt(b1,b2,Message);
+	out.println("Enc message= "+enc);
+	out.println("Enc length= "+enc.length());
+	String dec=c.mydecrypt(b1, b2,enc);
+	out.println("dec length= "+dec.length());
+	out.println("Dec message= "+dec);
+	
+	
+	//out.println(enc);
+	
+	//out.println("Decrypted Text= "+output);
+	
+	
+}
+}
